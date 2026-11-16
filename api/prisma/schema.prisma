@@ -16,6 +16,7 @@ model User {
   id        String   @id @default(cuid())
   name      String
   email     String   @unique
+  password  String?
   role      Role     @default(PATRON)
   createdAt DateTime @default(now())
   reviews   Review[]
@@ -33,6 +34,7 @@ model Book {
   title         String
   author        String
   isbn          String   @unique
+  totalCopies   Int      @default(1)
   publishedYear Int?
   genreId       String
   genre         Genre    @relation(fields: [genreId], references: [id], onDelete: Restrict)

@@ -17,11 +17,18 @@ handled by the relational database.
 
 ## Database Setup
 
-Copy `api/.env.example` to `api/.env` and set `DATABASE_URL` to your PostgreSQL
-connection string. For Supabase, copy the PostgreSQL URI from the Dashboard's
-**Connect** panel; `SUPABASE_URL` and `SUPABASE_ANON_KEY` are not database
-connection strings. Use the direct connection or session pooler URI, not the
-transaction pooler URI, for migrations.
+Copy `api/.env.example` to `api/.env`, set `DATABASE_URL` to your PostgreSQL
+connection string, and set `JWT_SECRET` to a long, unique random value. For
+Supabase, copy the PostgreSQL URI from the Dashboard's **Connect** panel;
+`SUPABASE_URL` and `SUPABASE_ANON_KEY` are not database connection strings. Use
+the direct connection or session pooler URI, not the transaction pooler URI,
+for migrations.
+
+The API provides public genre and book reads, genre CRUD, librarian-only book
+writes, `/auth/register` and `/auth/login`, and a bearer-token-protected
+`/users/profile` endpoint. Registration creates patron accounts and returns an
+access token; provision librarian roles through trusted database administration.
+Login is limited to five attempts per minute per client IP.
 
 Install dependencies from the repository root and API folder, then generate the
 client, create the schema, and load the sample data:
