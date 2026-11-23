@@ -7,6 +7,9 @@ each book. A genre is shared by many books, so storing it once avoids duplicated
 names and descriptions and keeps updates consistent. The foreign-key relation
 also lets the database enforce that every book belongs to an existing genre.
 
+Users store their role as the `Role` enum, so only `PATRON` and `LIBRARIAN`
+values are accepted by both the database and TypeScript client.
+
 ## Prisma vs. Document Databases
 
 What felt different is that Prisma models relationships explicitly through
