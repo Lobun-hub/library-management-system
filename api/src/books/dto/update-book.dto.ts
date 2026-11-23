@@ -21,6 +21,12 @@ export class UpdateBookDto {
   @IsOptional()
   @IsString()
   @IsNotEmpty()
+  @MaxLength(2000)
+  description?: string;
+
+  @IsOptional()
+  @IsString()
+  @IsNotEmpty()
   @MaxLength(20)
   isbn?: string;
 
