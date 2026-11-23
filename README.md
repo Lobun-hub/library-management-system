@@ -47,3 +47,18 @@ npm run db:seed
 `db:migrate` safely applies checked-in migrations without resetting the
 database. Use `npm run db:migrate:dev` only with a development database to
 create new migrations.
+
+## Web Client
+
+The React app in `client/` uses Tailwind CSS, React Router, and Axios. Set
+`VITE_API_URL` in `client/.env` to the NestJS API URL (the default local value
+is `http://localhost:3000`), then start both applications from the repository
+root:
+
+```bash
+npm run start:dev --prefix api
+npm run dev --prefix client
+```
+
+Open the Vite URL printed in the terminal. The catalog searches by title or
+author, filters by genre, and opens each book at `/books/:id`.
