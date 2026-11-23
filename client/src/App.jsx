@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
-import BookDetailPage from './pages/BookDetailPage.jsx';
-import CatalogPage from './pages/CatalogPage.jsx';
+import BookDetail from './pages/BookDetail.jsx';
+import HomePage from './pages/HomePage.jsx';
 import NotFoundPage from './pages/NotFoundPage.jsx';
 import SiteHeader from './components/SiteHeader.jsx';
 import './App.css';
@@ -11,8 +11,8 @@ function App() {
       <SiteHeader />
       <main>
         <Routes>
-          <Route path="/" element={<CatalogPage />} />
-          <Route path="/books/:id" element={<BookDetailPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/books/:id" element={<BookDetail />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>

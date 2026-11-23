@@ -4,7 +4,7 @@ import { api, getErrorMessage } from '../api.js';
 import BookCover from '../components/BookCover.jsx';
 import Feedback from '../components/Feedback.jsx';
 
-function BookDetailPage() {
+function BookDetail() {
   const { id } = useParams();
   const [result, setResult] = useState({ key: '', book: null, error: '' });
   const [retry, setRetry] = useState(0);
@@ -97,4 +97,4 @@ function BookDetailPage() {
   );
 }
 
-export default BookDetailPage;
+export default BookDetail;
