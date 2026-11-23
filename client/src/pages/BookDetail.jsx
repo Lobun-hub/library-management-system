@@ -66,10 +66,9 @@ function BookDetail() {
               </Link>
 
               <div className="detail-divider" />
-              <p className="detail-intro">
-                Some books entertain. Some stay with us long after the last page.
-                Take a closer look at this title from our collection.
-              </p>
+              {book.description?.trim() && (
+                <p className="detail-intro">{book.description}</p>
+              )}
 
               <dl className="book-facts">
                 <div>

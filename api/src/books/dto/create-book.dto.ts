@@ -11,6 +11,11 @@ export class CreateBookDto {
 
   @IsString()
   @IsNotEmpty()
+  @MaxLength(2000)
+  description!: string;
+
+  @IsString()
+  @IsNotEmpty()
   @MaxLength(20)
   isbn!: string;
 
