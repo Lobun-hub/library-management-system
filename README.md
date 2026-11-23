@@ -48,6 +48,9 @@ npm run db:seed
 database. Use `npm run db:migrate:dev` only with a development database to
 create new migrations.
 
+The sample seed data includes a Self-Help genre with books on habits, focus,
+psychology, and personal growth, including seven titles by Robert Greene.
+
 ## Web Client
 
 The React app in `client/` uses Tailwind CSS, React Router, and Axios. Set
